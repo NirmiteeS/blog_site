@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-light-900 text-dark-800 dark:bg-dark-900 dark:text-light-800 transition-colors duration-300;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-sans font-bold leading-tight;
+  }
+  
+  p, li, blockquote {
+    @apply font-serif leading-relaxed;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl;
+  }
+  
+  .card {
+    @apply bg-white dark:bg-dark-800 rounded-lg shadow-md overflow-hidden transition-all duration-300;
+  }
+  
+  .card:hover {
+    @apply shadow-lg transform -translate-y-1 transition-all;
+  }
+  
+  .btn {
+    @apply px-4 py-2 rounded-md font-medium transition-all duration-200 inline-flex items-center justify-center;
+  }
+  
+  .btn-primary {
+    @apply bg-primary-500 text-white hover:bg-primary-600;
+  }
+  
+  .btn-outline {
+    @apply border border-primary-500 text-primary-500 hover:bg-primary-50 dark:hover:bg-dark-700;
+  }
+  
+  .nav-link {
+    @apply text-dark-700 dark:text-light-700 hover:text-primary-500 dark:hover:text-primary-400 font-medium transition-colors;
+  }
+  
+  .nav-link.active {
+    @apply text-primary-500 dark:text-primary-400 font-semibold;
+  }
+}
+
+.animate-enter {
+  opacity: 0;
+}
+
+.animate-enter-active {
+  opacity: 1;
+  transition: opacity 300ms ease-in;
+}
+
+.animate-exit {
+  opacity: 1;
+}
+
+.animate-exit-active {
+  opacity: 0;
+  transition: opacity 300ms ease-out;
+}
+
+/* Blog post content styles */
+.blog-content h2 {
+  @apply text-2xl font-bold mt-8 mb-4 font-sans;
+}
+
+.blog-content h3 {
+  @apply text-xl font-bold mt-6 mb-3 font-sans;
+}
+
+.blog-content p {
+  @apply my-4 text-base;
+}
+
+.blog-content ul, .blog-content ol {
+  @apply my-4 ml-6;
+}
+
+.blog-content ul {
+  @apply list-disc;
+}
+
+.blog-content ol {
+  @apply list-decimal;
+}
+
+.blog-content blockquote {
+  @apply pl-4 border-l-4 border-primary-500 italic my-6;
+}
+
+.blog-content a {
+  @apply text-primary-500 hover:text-primary-700 underline;
+}
+
+.blog-content img {
+  @apply my-6 rounded-lg mx-auto;
+}
