@@ -12,7 +12,7 @@ const CategoryPage: React.FC = () => {
     .filter(post => post.categories.includes(slug || ''))
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
   
-  const categoryTitle = slug?.charAt(0).toUpperCase() + slug?.slice(1);
+  const categoryTitle = (slug || '').charAt(0).toUpperCase() + (slug || '').slice(1);
   
   return (
     <div className="animate-fade-in">
